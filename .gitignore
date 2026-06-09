@@ -13,3 +13,6 @@ dist/
 *.out
 *.toc
 .DS_Store
+
+# Licensed GMS demo store (not redistributed)
+data/gms_annual_report_store/
