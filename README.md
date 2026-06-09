@@ -24,8 +24,10 @@ grounding and recall.
 > [LLMs from scratch](https://github.com/knowlytix/llm-from-scratch)
 
 > **Status:** the open `groundloop` baseline (naive chunk→embed→top-k RAG, the
-> deliberate "before") is under construction — it is the contrast that motivates
-> the GMS "after". See the carve-out manifest in the planning notes.
+> deliberate "before") is implemented — numpy-only TF-IDF retrieval + a
+> stuff-and-pray answerer that never abstains. On the Northwind cohort it scores
+> ~20% answer accuracy and 0% abstention: the gap GEODE/GMS closes. Run
+> `python demos/naive_rag.py`.
 
 ## What's inside
 
