@@ -46,6 +46,24 @@ pip install "groundloop[ml]"          # + embedders / open-weight models
 pip install "groundloop[gms]"         # + the licensed GMS backend (knowlytix)
 ```
 
+## Quickstart
+
+`groundloop` is the deliberately naive "chunk and pray" baseline — retrieve top-k,
+answer, and (tellingly) **never abstain**. That failure mode is the point:
+
+```python
+from groundloop import NaiveRAG
+
+rag = NaiveRAG("Q3 cloud revenue was 120 million dollars. Headcount grew to 340 employees.")
+ans = rag.answer("What was Q3 cloud revenue?")
+print(f"{ans.decision}: {ans.answer!r}")   # answer: '3'  <- grabs the wrong span, still "answers"
+```
+
+The baseline confidently returns a wrong span and never says "I don't know" — the
+*before* the book improves on. The grounded, abstaining GMS approach (verified
+knowledge graph, provenance, byte-exact numbers) is the Pro tier; see the chapter
+notebooks in [`notebooks/`](notebooks/README.md).
+
 ## The GMS upgrade (open-core)
 
 `groundloop` runs fully without a license. GEODE-RAG — geometric retrieval, Exact
