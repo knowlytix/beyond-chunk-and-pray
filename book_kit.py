@@ -18,6 +18,23 @@ from __future__ import annotations
 import os
 import sys
 
+
+def _load_dotenv() -> None:
+    """Auto-load .env (gitignored) so config lives in a file, not shell exports.
+    Already-set environment variables win, so a shell export still overrides it."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    if not os.path.exists(path):
+        return
+    for raw in open(path):
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, val = line.split("=", 1)
+        os.environ.setdefault(key.strip(), val.strip().strip('"').strip("'"))
+
+
+_load_dotenv()
+
 # knowlytix is pip-installed; KNOWLYTIX_SRC only needed for a source checkout.
 KNOWLYTIX_SRC = os.environ.get("KNOWLYTIX_SRC", "")
 REPO = os.environ.get(
