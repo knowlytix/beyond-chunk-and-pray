@@ -13,7 +13,7 @@ from groundloop.eval import CaseResult, evaluate, load_cohort, load_corpus
 from groundloop.index import Retrieved, TfidfIndex
 from groundloop.rag import Answer, NaiveRAG
 
-__version__ = "0.0.1"
+__version__ = "0.1.1"
 
 __all__ = [
     "Answer",
