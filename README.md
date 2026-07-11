@@ -75,6 +75,11 @@ import groundloop.gms as gms
 gms.available()   # True if the licensed backend is installed
 ```
 
+Many notebooks — the `*_project` build variants and the DoE/embedding/baseline
+appendices — exercise GEODE-RAG and need the backend. It's a one-time setup:
+**[get a free developer license](https://knowlytix.ai/signup/)**, install
+`knowlytix`, and every GMS notebook runs.
+
 The production-grade, GMS-native edition is the *Beyond Chunk and Pray, Pro
 Edition* — see [knowlytix.ai](https://knowlytix.ai/).
 

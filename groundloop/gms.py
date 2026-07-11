@@ -19,10 +19,14 @@ from types import ModuleType
 
 KNOWLYTIX_URL = "https://knowlytix.ai/"
 
+#: Where to sign up for a free developer license (one-time setup).
+KNOWLYTIX_SIGNUP_URL = "https://knowlytix.ai/signup/"
+
 INSTALL_HINT = (
     "GEODE-RAG features require the licensed 'knowlytix' package, which is "
     "installed separately and is not on public PyPI.\n"
-    f"  Obtain a license and the package index from Knowlytix: {KNOWLYTIX_URL}\n"
+    f"  Get a free developer license (one-time): {KNOWLYTIX_SIGNUP_URL}\n"
+    f"  More on Knowlytix: {KNOWLYTIX_URL}\n"
     "  pip install knowlytix --index-url <KNOWLYTIX_INDEX_URL>   # license required\n"
     "  pip install 'groundloop[gms]'\n"
     "See the README section 'The GMS upgrade'."
